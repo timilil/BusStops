@@ -68,4 +68,18 @@ export class DigitransitService {
     }
   }
 
+  getDisruptsInfo() {
+    {
+      const body = `{
+                      alerts {
+                        alertDescriptionText
+                      }
+                    }`;
+      const settings = {
+        headers: new HttpHeaders().set('Content-Type', 'application/graphql'),
+      };
+      return this.http.post(this.apiUrl, body, settings);
+    }
+  }
+
 }

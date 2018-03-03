@@ -1,0 +1,14 @@
+<nav>
+  <a [routerLink] = "'/bus-stops'">Back</a>
+</nav>
+<div>
+  <h2>Disrupts (If any)</h2>
+  <ul>
+    <li *ngFor="let disrupt of disruptInfo">
+      <p>
+        {{disrupt.alertDescriptionText}}
+      </p>
+    </li>
+  </ul>
+</div>
+

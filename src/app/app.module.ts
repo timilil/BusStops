@@ -10,12 +10,14 @@ import { AgmCoreModule } from '@agm/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { SelectedBusStopComponent } from './selected-bus-stop/selected-bus-stop.component';
+import { DisruptsinfoComponent } from './disruptsinfo/disruptsinfo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BusstopsComponent,
-    SelectedBusStopComponent
+    SelectedBusStopComponent,
+    DisruptsinfoComponent
   ],
   imports: [
     BrowserModule,
