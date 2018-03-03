@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="form-group">
+    <input class="input" placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+  </div>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude" [label]="labelOptions">
+      <agm-marker *ngFor="let busStop of arrayOf8000Stops; let i = index" [latitude]="busStop.lat"
+                  [longitude]="busStop.lon" (markerClick)="redirectToClickedBusStop(busStop.gtfsId)"></agm-marker>
+    </agm-marker>
+  </agm-map>
+  <p>Click on the desired stop shown on the map. After that u can click the route number at bottom of the page and see
+    the whole itinerary.</p>
+</div>
+
+<div>
+  <h2>{{stopname}} {{(stopId)}}</h2>
+  <ul>
+    <li *ngFor="let bus of buses">
+      <a (click)="shareData($event, bus.directionId, bus.route.gtfsId)" [routerLink]="'/selected-bus-stop'">Route: {{bus.name}}</a>
+    </li>
+  </ul>
+</div>

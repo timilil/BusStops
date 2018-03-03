@@ -1,0 +1,14 @@
+<nav>
+  <a [routerLink] = "'/bus-stops'">Back</a>
+</nav>
+<div>
+  <h2>Route {{busNumber}}</h2>
+  <ul>
+    <li *ngFor="let stopName of selectedBusNumbersStops">
+      <p>{{stopName.name}}</p>
+    </li>
+  </ul>
+</div>
+<nav>
+  <a [routerLink] = "'/bus-stops'">Back</a>
+</nav>

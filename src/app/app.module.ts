@@ -3,16 +3,32 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
+import { BusstopsComponent } from './busstops/busstops.component';
+import { DigitransitService} from './services/digitransit.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { SelectedBusStopComponent } from './selected-bus-stop/selected-bus-stop.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BusstopsComponent,
+    SelectedBusStopComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDzb1PYKCsVDN6xUDgSmE5bErAyUeCi2fc',
+      libraries: ['places']
+    }),
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [DigitransitService, BusstopsComponent, SelectedBusStopComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
